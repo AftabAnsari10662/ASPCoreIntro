@@ -1,1 +1,1 @@
-# This project is for demostration of Asp.Net Core 1.0 features with simplicity.
+# This project is for Asp.Net Core 1.0 features demostration with simplicity.
