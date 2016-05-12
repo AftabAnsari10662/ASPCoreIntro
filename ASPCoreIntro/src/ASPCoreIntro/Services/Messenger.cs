@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using ASPCoreIntro.Models;
+﻿using ASPCoreIntro.Models;
 using Microsoft.Extensions.Configuration;
 
 namespace ASPCoreIntro.Services
