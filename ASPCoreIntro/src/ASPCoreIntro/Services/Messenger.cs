@@ -18,12 +18,13 @@ namespace ASPCoreIntro.Services
         }
         public Message GetMessage()
         {
-            var value = _configuration["message"];
+            var content = _configuration["content"];
+            var sender = _configuration["sender"];
             var message = new Message()
             {
                 Id  = _id++,
-                Content = value,
-                Sender = "ASP.Net Core 1.0"
+                Content = content,
+                Sender = sender
             };
 
             return message;

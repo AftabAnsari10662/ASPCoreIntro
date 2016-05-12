@@ -23,7 +23,7 @@ namespace ASPCoreIntro
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton(provider => Configuration);
-            services.AddSingleton<IMessenger, Messenger>();
+            services.AddTransient<IMessenger, Messenger>();
             services.AddMvc();
         }
 
