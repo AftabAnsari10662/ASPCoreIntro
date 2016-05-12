@@ -18,8 +18,8 @@ namespace ASPCoreIntro.Services
         }
         public Message GetMessage()
         {
-            var content = _configuration["content"];
-            var sender = _configuration["sender"];
+            var content = _configuration["message:content"];
+            var sender = _configuration["message:sender"];
             var message = new Message()
             {
                 Id  = _id++,
