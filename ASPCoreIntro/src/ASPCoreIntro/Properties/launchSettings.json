@@ -12,6 +12,7 @@
       "commandName": "IISExpress",
       "launchBrowser": true,
       "environmentVariables": {
+        "Hosting.Environmet": "Beta",
         "Hosting:Environment": "Development"
       }
     },

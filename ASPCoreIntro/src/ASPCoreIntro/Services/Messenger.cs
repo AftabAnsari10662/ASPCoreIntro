@@ -1,5 +1,7 @@
 ﻿using ASPCoreIntro.Models;
+using Microsoft.AspNet.Mvc;
 using Microsoft.Extensions.Configuration;
+using System;
 
 namespace ASPCoreIntro.Services
 {
@@ -12,6 +14,7 @@ namespace ASPCoreIntro.Services
 
             _configuration = configuration;
         }
+
         public Message GetMessage()
         {
             var content = _configuration["message:content"];

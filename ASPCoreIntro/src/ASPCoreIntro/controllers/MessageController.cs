@@ -2,6 +2,7 @@
 using ASPCoreIntro.Services;
 using Microsoft.AspNet.Mvc;
 using Microsoft.AspNet.Mvc.ViewEngines;
+using System;
 
 namespace ASPCoreIntro.controllers
 {
@@ -20,5 +21,12 @@ namespace ASPCoreIntro.controllers
 
             return View("message", model);
         }
+
+        [HttpGet]
+        public IActionResult GetError()
+        {
+            throw new Exception("Oops!!Something went wrong!");
+        }
+
     }
 }
