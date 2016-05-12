@@ -1,0 +1,16 @@
+﻿@model ASPCoreIntro.Models.Message
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Index Page</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div>
+        @Html.Partial("_message", Model)
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/scripts/es6/message.js"></script>
+</body>
+
+</html>

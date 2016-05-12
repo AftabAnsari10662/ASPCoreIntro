@@ -1,0 +1,10 @@
+{
+	"version": "1.0.0",
+	"name": "aspnetcoreapp",
+	"private": true,
+  "devDependencies": {
+    "traceur": "0.0.108",
+    "gulp-concat": "^2.6.0",
+    "gulp-uglify": "^1.5.3"
+  }
+}
