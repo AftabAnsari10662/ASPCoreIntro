@@ -4,6 +4,8 @@ using Microsoft.AspNet.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 using ASPCoreIntro.Services;
+using Microsoft.AspNet.Routing;
+using System;
 
 namespace ASPCoreIntro
 {
@@ -12,7 +14,8 @@ namespace ASPCoreIntro
         public Startup()
         {
             var builder = new ConfigurationBuilder()
-                              .AddJsonFile("appsettings.json");
+                              .AddJsonFile("appsettings.json")
+                              .AddEnvironmentVariables();
             Configuration = builder.Build();
         }
 
@@ -27,19 +30,27 @@ namespace ASPCoreIntro
             services.AddMvc();
         }
 
+
+
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app)
         {
             app.UseIISPlatformHandler();
-            //app.UseWelcomePage();
-            app.UseDefaultFiles();
-            app.UseStaticFiles();
-            app.UseDeveloperExceptionPage();
-            app.UseMvcWithDefaultRoute();
+            app.UseMvc(configureRoutes);
+            //app.UseDefaultFiles();
+            //app.UseStaticFiles();
+            //app.UseDeveloperExceptionPage();
+            
             app.Run(async (context) =>
             {
                 await context.Response.WriteAsync("Hello World!");
             });
+        }
+
+        private void configureRoutes(IRouteBuilder routeBuilder)
+        {
+            routeBuilder.MapRoute("Default",
+                "{controller=Message}/{action=GetMessage}/{id?}");
         }
 
         // Entry point for the application.
